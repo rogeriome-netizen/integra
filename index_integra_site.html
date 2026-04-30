@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integra Gestão e Regulação | Site em Construção</title>
+  <meta name="description" content="Site da Integra Gestão e Regulação em construção." />
+
+  <style>
+    :root {
+      --azul: #082f55;
+      --azul-escuro: #031f38;
+      --vermelho: #c81f32;
+      --branco: #ffffff;
+      --cinza: #f5f7fa;
+      --texto: #263545;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(200, 31, 50, 0.10), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(8, 47, 85, 0.16), transparent 32%),
+        var(--cinza);
+      color: var(--texto);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(720px, 100%);
+      background: var(--branco);
+      border-radius: 28px;
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: 0 24px 60px rgba(8, 47, 85, 0.14);
+      border: 1px solid rgba(8, 47, 85, 0.08);
+    }
+
+    .logo {
+      max-width: 460px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 34px;
+    }
+
+    .line {
+      width: 86px;
+      height: 4px;
+      background: var(--vermelho);
+      border-radius: 999px;
+      margin: 0 auto 28px;
+    }
+
+    h1 {
+      color: var(--azul);
+      font-size: clamp(32px, 6vw, 54px);
+      line-height: 1.05;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      color: #526171;
+      margin-bottom: 30px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: rgba(8, 47, 85, 0.08);
+      color: var(--azul);
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 13px;
+      color: #7b8794;
+    }
+
+    @media (max-width: 520px) {
+      .card {
+        padding: 36px 22px;
+        border-radius: 22px;
+      }
+
+      .logo {
+        margin-bottom: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <!-- Salve a imagem da logo na mesma pasta deste arquivo com o nome: logo-integra.jpeg -->
+    <img class="logo" src="logo-integra.jpeg" alt="Integra Gestão e Regulação" />
+
+    <div class="line"></div>
+
+    <h1>Site em Construção</h1>
+
+    <p>
+      Em breve, a Integra Gestão e Regulação estará com seu novo site no ar.
+    </p>
+
+    <span class="tag">Gestão inteligente, regulação precisa</span>
+
+    <footer>
+      © <span id="ano"></span> Integra Gestão e Regulação. Todos os direitos reservados.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
