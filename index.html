@@ -295,22 +295,25 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .card {
       background: #0932b2;
       border: 1px solid var(--borda);
-      border-radius: 22px;
-      padding: 24px;
+      border-radius: 0px 22px 22px 22px;
+      padding: 32px;
+      display: flex;
+      flex-direction:column;
+      gap: 12px;
       box-shadow: 0 12px 28px rgba(8, 47, 85, 0.06);
     }
 
     .card-icon {
-      width: 46px;
-      height: 46px;
-      margin-bottom: 16px;
+      width: 60px;
+      height: 60px;
+      margin-bottom:0px;
     }
 
     .card-icon img {
@@ -321,13 +324,17 @@
 
     .card h3 {
       color: #ffffff;
-      font-size: 19px;
-      margin-bottom: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform:uppercase;
+    
     }
 
     .card p {
+      font-size: 0.875rem;
       color: #ffffff;
-      font-size: 15px;
+      line-height:1.6;
     }
 
     .split {
@@ -637,29 +644,52 @@
         <div class="cards">
           <article class="card">
             <div class="card-icon">
-              <img src="icone-gestao.png" alt="Gestão" />
+              <img src="icone-gestao2.png" alt="Gestão" />
             </div>
-            <h3>Gestão</h3>
-            <p>Estruturamos processos, rotinas, setores e responsabilidades para tornar a operação mais organizada e eficiente.</p> 
+            <h3>GESTÃO ADMINISTRATIVA</h3>
+            <p>Organização de processos, rotinas e responsabilidades.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">02</div>
-            <h3>Regulação.</h3>
-            <p>Apoiamos a análise, o controle e o acompanhamento dos eventos, contribuindo para processos mais seguros e consistentes.</p>
+            <div class="card-icon">
+              <img src="icone-gestão-comercial.png" alt="Gestão Comercial" />
+            </div>
+            <h3>GESTÃO COMERCIAL E CARTEIRA </h3>
+            <p>Acompanhamento das vendas, retenção e receita recorrente.</p>  
           </article>
 
           <article class="card">
-            <div class="card-icon">03</div>
-            <h3>Dados.</h3>
-            <p>Transformamos informações da operação em indicadores que ajudam a acompanhar resultados e orientar decisões.
+            <div class="card-icon">
+               <img src="icone-cobranca.png" alt="Cobrança" />
+            <h3>COBRANÇA</h3>
+            <p>Controle da inadimplência e recuperação da carteira.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">04</div>
-            <h3>Operação.</h3>
-            <p>Apóiamos áreas como cobrança, atendimento e gestão de equipes, fortalecendo a rotina e o acompanhamento da operação.</p> 
+            <div class="card-icon">
+              <img src="icone-eventos.png" alt="Eventos" />
+            </div>
+            <h3>EVENTOS E SINISTROS</h3>
+            <p>Padronização dos fluxos e controle operacional.</p>
           </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <img src="icone-indicadores.png" alt="Indicadores" />
+            </div>
+            <h3>INDICADORES DE GESTÃO</h3>
+            <p>Monitoramento de resultados para apoiar decisões.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+
+              <img src="icone-governanca.png" alt="Governança Documental" />
+            </div>
+            <h3>GOVERNANÇA  DOCUMENTAL</h3>
+            <p>Estruturação de documentos, Controles e evidências.</p>
+          </article>
+
         </div>
       </div>
     </section>
