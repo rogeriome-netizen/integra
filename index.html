@@ -295,12 +295,12 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
     .card {
-      background: var(--branco);
+      background: #0932b2;
       border: 1px solid var(--borda);
       border-radius: 22px;
       padding: 24px;
@@ -310,23 +310,23 @@
     .card-icon {
       width: 46px;
       height: 46px;
-      border-radius: 14px;
-      background: rgba(200, 31, 50, 0.10);
-      color: var(--vermelho);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
       margin-bottom: 16px;
     }
 
+    .card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .card h3 {
-      color: var(--azul);
+      color: #ffffff;
       font-size: 19px;
       margin-bottom: 8px;
     }
 
     .card p {
-      color: var(--cinza-texto);
+      color: #ffffff;
       font-size: 15px;
     }
 
@@ -560,13 +560,12 @@
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Gestão inteligente, regulação precisa</span>
-          <h1>Organização, controle e segurança para associações.</h1>
+          <h1> Gestão inteligente para associações mais eficientes.</h1>
           <p>
-            A Integra Gestão e Regulação atua no apoio administrativo, operacional e regulatório de associações de proteção mutualista e proteção veicular, ajudando a transformar rotinas em processos claros, seguros e acompanháveis.
+            Apoio administrativo, operacional e regulatório para transformar processos, dados e rotinas em uma operação mais organizada, segura e preparada para crescer.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contato">Fale com a Integra</a>
-            <a class="btn btn-secondary" href="#servicos">Conheça nossos serviços</a>
+            <a class="btn btn-primary" href="#contato">Fale conosco.</a>
           </div>
         </div>
 
@@ -595,7 +594,8 @@
           <div class="metrics">
             <div class="metric">
               <strong>Gestão</strong>
-              <span>rotinas, setores e processos</span>
+              <span>rotinas, setores e 
+                processos</span>
             </div>
             <div class="metric">
               <strong>Regulação</strong>
@@ -625,51 +625,40 @@
       </div>
     </section>
 
+    
+<!-- SEÇÃO O QUE FAZEMOS -->
     <section id="servicos">
       <div class="container">
         <div class="section-title">
           <span class="eyebrow">Como ajudamos</span>
-          <h2>Frentes de atuação para fortalecer a associação.</h2>
-          <p>
-            A Integra atua de forma integrada com a diretoria, equipes internas e parceiros para melhorar a organização da operação e apoiar decisões estratégicas.
-          </p>
+          <h2>Apoiamos associações na estruturação dos principais pilares da operação:</h2>
         </div>
 
         <div class="cards">
           <article class="card">
-            <div class="card-icon">01</div>
-            <h3>Gestão administrativa</h3>
-            <p>Padronização de rotinas, organização de setores, acompanhamento de pendências e melhoria dos fluxos internos.</p>
+            <div class="card-icon">
+              <img src="icone-gestao.png" alt="Gestão" />
+            </div>
+            <h3>Gestão</h3>
+            <p>Estruturamos processos, rotinas, setores e responsabilidades para tornar a operação mais organizada e eficiente.</p> 
           </article>
 
           <article class="card">
             <div class="card-icon">02</div>
-            <h3>Regulação e eventos</h3>
-            <p>Apoio na organização da rotina de análise, controle de eventos, documentação e acompanhamento dos processos.</p>
+            <h3>Regulação.</h3>
+            <p>Apoiamos a análise, o controle e o acompanhamento dos eventos, contribuindo para processos mais seguros e consistentes.</p>
           </article>
 
           <article class="card">
             <div class="card-icon">03</div>
-            <h3>Cobrança e relacionamento</h3>
-            <p>Comunicação mais clara com associados, apoio à cobrança, acompanhamento da inadimplência e melhoria do atendimento.</p>
+            <h3>Dados.</h3>
+            <p>Transformamos informações da operação em indicadores que ajudam a acompanhar resultados e orientar decisões.
           </article>
 
           <article class="card">
             <div class="card-icon">04</div>
-            <h3>Indicadores de gestão</h3>
-            <p>Criação de métricas para acompanhar resultado, sinistralidade, inadimplência, produtividade e pontos de atenção.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">05</div>
-            <h3>Suporte à diretoria</h3>
-            <p>Relatórios gerenciais, reuniões de alinhamento e apoio na tomada de decisão com base em dados e prioridades.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">06</div>
-            <h3>Estruturação operacional</h3>
-            <p>Construção de rotinas, responsabilidades por setor, metas e acompanhamento para reduzir falhas operacionais.</p>
+            <h3>Operação.</h3>
+            <p>Apóiamos áreas como cobrança, atendimento e gestão de equipes, fortalecendo a rotina e o acompanhamento da operação.</p> 
           </article>
         </div>
       </div>
