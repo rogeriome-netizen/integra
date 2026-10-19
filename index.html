@@ -991,6 +991,149 @@
         padding: 48px 0;
       }
     }
+
+   /* =====================================================
+   15. AJUSTES PARA CELULAR E TABLET
+   (fica no FINAL do CSS, depois de tudo)
+   ===================================================== */
+@media (max-width: 860px) {
+
+    /* ---- HERO (capa) ---- */
+  .hero {
+    background-image: url('capa-mobile.png');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 1080 / 1920;
+    padding: 70px 0 0;                 /* distância do topo */
+    align-items: flex-start;           /* ← texto no TOPO (era centralizado) */
+  }
+
+  /* textos menores, pra caberem acima do logo da imagem */
+  .hero h1 {
+    font-size: 30px;
+    margin-bottom: 14px;
+  }
+
+  /* no computador, as quebras ficam escondidas */
+  .quebra-mobile {
+  display: inline;
+  }
+  .hero p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+
+  .hero .btn-primary {
+    min-height: 42px;
+    padding: 10px 20px;
+  }
+
+  .hero-badges {
+    gap: 12px 20px;
+    margin-top: 16px;
+  }
+
+  .badge {
+    font-size: 14px;
+  }
+
+  /* ---- QUEM SOMOS ---- */
+  #sobre {
+    aspect-ratio: auto;
+    display: block;
+    background-image: url('sobre-mobile.png');
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding: 48px 0 100vw;             /* o espaço de baixo é onde a imagem aparece */
+  }
+
+  #sobre .section-title h2 {
+    font-size: 40px;                   /* era 60px */
+  }
+
+  /* os <br> do HTML forçam quebras de linha ruins no celular */
+  #sobre br,
+  #contato p br {
+    display: none;
+  }
+
+  /* tira o espaço vazio das etiquetas vermelhas */
+  #sobre .eyebrow::before,
+  #metodo .eyebrow::before {
+    display: none;
+  }
+
+  /* ---- SERVIÇOS ---- */
+  #servicos {
+    padding-top: 24px;
+  }
+
+  .cards {
+    width: 92%;
+    margin-top: 0;                     /* tira a sobreposição que só funciona no computador */
+  }
+
+  .card {
+    padding: 28px;                     /* era 46px */
+  }
+
+  /* ---- MÉTODO ---- */
+  #metodo {
+    aspect-ratio: auto;
+    background-image: url('metodo-mobile.png');
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding: 48px 0 100vw;
+  }
+
+  #metodo .container.split {
+    grid-template-columns: 1fr;        /* uma coluna só */
+  }
+
+  #metodo .section-title,
+  #metodo .steps {
+    grid-column: 1;
+    grid-row: auto;
+    top: 0;
+  }
+
+  /* ---- RESULTADOS ---- */
+  .dash-topo {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .chip {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+
+  /* ---- CONTATO ---- */
+  .contact {
+    width: auto;
+    margin-left: 0;
+    aspect-ratio: auto;
+    background-color: #0932b2;         /* azul liso atrás da imagem */
+    background-image: url('contato-mobile.png');
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    border-radius: 28px;
+    padding: 40px 24px 92vw;           /* o card é um pouco mais estreito que a tela */
+  }
+
+  .contact h2 {
+    font-size: 34px;                   /* era até 60px */
+  }
+
+  .contact p {
+    font-size: 17px;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -1016,30 +1159,15 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1> Gestão inteligente para associações mais eficientes.</h1>
+          <h1> Gestão inteligente <br class="quebra-mobile">para associações <br class="quebra-mobile">mais eficientes.</h1>
           <p>
             Apoio administrativo, operacional e regulatório para transformar processos, dados e rotinas em uma operação mais organizada, segura e preparada para crescer.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contato">Fale conosco.</a>
-
-            <div class="hero-badges">
-              <div class="badge">
-                <img src="icone-cobranca.png" alt="">
-                <span>Organização</span>
-              </div>
-              <div class="badge">
-                <img src="icone-cobranca.png" alt="">
-                <span>Processos</span>
-              </div>
-              <div class="badge">
-                <img src="icone-cobranca.png" alt="">
-                <span>Segurança</span>
-              </div>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
     <section id="sobre">
@@ -1385,3 +1513,4 @@
   </script>
 </body>
 </html>
+
