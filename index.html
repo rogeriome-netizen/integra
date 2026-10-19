@@ -6,6 +6,11 @@
   <title>Integra Gestão e Regulação</title>
   <meta name="description" content="Integra Gestão e Regulação: gestão inteligente, regulação precisa e apoio operacional para associações de proteção mutualista e proteção veicular." />
 
+  <!-- Fonte Poppins (carrega no computador de qualquer visitante) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --azul: #082f55;
@@ -24,6 +29,11 @@
       padding: 0;
     }
 
+    /* Garante a Poppins em tudo, inclusive botões e formulários */
+    html, body, button, input, textarea, select {
+      font-family: "Poppins", sans-serif;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -33,6 +43,7 @@
       color: var(--azul-escuro);
       background: var(--cinza-claro);
       line-height: 1.6;
+      overflow-x: clip;   /* evita barra de rolagem horizontal durante as animações */
     }
 
     a {
@@ -52,6 +63,12 @@
       background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--borda);
+    }
+
+    .logo {
+      height: 64px;
+      width: auto;
+      display: block;
     }
 
     .nav {
@@ -155,11 +172,42 @@
       transform: translateY(-1px);
     }
 
+    .hero h1,
+    .hero p {
+      color: #ffffff;
+    }
+
     .hero {
-      padding: 82px 0 54px;
-      background:
-        radial-gradient(circle at top right, rgba(200, 31, 50, 0.10), transparent 28%),
-        linear-gradient(135deg, #ffffff 0%, #edf4fb 100%);
+      padding: 0;
+      background-image: url("capa - nova - background . png.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 1920 / 1080;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 28px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+      font-size: 18pk;
+      font-weight: 600;
+    }
+
+    .badge img {
+      width: 26px;
+      height: 26px;
+      filter: brightness(0) invert(1);
     }
 
     .hero-grid {
@@ -167,6 +215,10 @@
       grid-template-columns: 1.15fr .85fr;
       gap: 42px;
       align-items: center;
+    }
+
+    .hero-grid > div:first-child {
+      max-width: 480px;
     }
 
     .eyebrow {
@@ -199,7 +251,7 @@
 
     .hero p {
       font-size: 18px;
-      color: var(--cinza-texto);
+      color: ffffff;
       max-width: 660px;
       margin-bottom: 28px;
     }
@@ -286,18 +338,18 @@
       max-width: 900px;
     }
 
-    #servicos .eyebrow { 
-    background: #c81f32;
-    color: #ffffff;
-    padding: 15px 15px;
-    border-radius: 20px;
-    font-size: 20 px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: inline-block;
+    #servicos .eyebrow {
+      background: #c81f32;
+      color: #ffffff;
+      padding: 15px 15px;
+      border-radius: 20px;
+      font-size: 20 px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-block;
     }
-     
+
     .section-title h2 {
       color: var(--azul);
       font-size: clamp(24px, 2.8vw, 34px);
@@ -306,36 +358,116 @@
       margin-bottom: 12px;
     }
 
+    #metodo .container.split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+
+    #metodo .section-title {
+      grid-column: 2;     /* coluna da direita */
+      grid-row: 1;        /* primeira linha (em cima) */
+      margin-bottom: 24px;
+      position: relative;
+      top: 40px;          /* aumente pra descer mais: 50px, 60px... */
+    }
+
+    #metodo .section-title p {
+      font-size: 16px;
+      line-height: 2.0;
+    }
+
+    #metodo .steps {
+      grid-column: 2;     /* mesma coluna da direita */
+      grid-row: 2;        /* segunda linha (embaixo do texto) */
+      margin-top: 0;
+    }
+
+    #metodo {
+      background-image: url('background - parte da segurança.png');   /* SESSÃO NOSSO MÉTODO */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 1920 / 1080;
+    }
+
+    #metodo .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      background: #c81f32;
+      padding: 8px 16px;
+      border-radius: 999px;
+    }
+
+    #metodo .section-title .eyebrow {
+      color: var(--branco);
+    }
+
+    #sobre {
+      background-image: url("quem sou - png.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      aspect-ratio: 1920 / 1080;
+      display: flex;
+      align-items: center;
+    }
+
+    #sobre .container {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    #sobre .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      background: #c81f32;
+      padding: 8px 16px;
+      border-radius: 999px;
+    }
+
+    #sobre .section-title .eyebrow {
+      color: var(--branco);
+    }
+
     #sobre .section-title h2 {
-      font-size: 40px;
+      font-size: 60px;
+      color: 002eb6;
+    }
+
+    #sobre .section-title p {
+      color: 002eb6;
     }
 
     .section-title p {
-      color: #000000
-      font-size: 17px;
+      color: #000000;   /* TEXTO DA SESSÃO QUEM SOMOS (A INTEGRA) */
+      font-size: 16px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
+      max-width: 1120px;
+      margin: 0 auto;
+      margin-top: -200px;
     }
 
     .card {
       background: #0932b2;
       border: 1px solid var(--borda);
-      border-radius: 0px 22px 22px 22px;
-      padding: 32px;
+      border-radius: 16px 16px 16px 16px;
+      padding: 46px;
       display: flex;
-      flex-direction:column;
-      gap: 12px;
+      flex-direction: column;
+      gap: 8px;
       box-shadow: 0 12px 28px rgba(8, 47, 85, 0.06);
     }
 
     .card-icon {
       width: 60px;
       height: 60px;
-      margin-bottom:0px;
+      margin-bottom: 0px;
     }
 
     .card-icon img {
@@ -349,14 +481,13 @@
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 1px;
-      text-transform:uppercase;
-    
+      text-transform: uppercase;
     }
 
     .card p {
       font-size: 0.875rem;
       color: #ffffff;
-      line-height:1.6;
+      line-height: 1.6;
     }
 
     .split {
@@ -447,48 +578,348 @@
       font-size: 15px;
     }
 
+    #resultados .container {
+      width: min(1300px, 94%);
+      max-width: none;
+    }
+
+    .resultados {
+      width: 100%;
+      max-width: none;
+      margin: 0 auto;
+    }
+
+    #resultados .eyebrow {
+      background: #c81f32;
+      color: #ffffff;
+      padding: 15px 15px;
+      border-radius: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    .resultados-painel {
+      position: relative;
+      background: #0932b2;
+      border-radius: 28px;
+      padding: 40px 32px;
+    }
+
+    .dash {
+      background: var(--branco);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--sombra);
+    }
+
+    .dash-topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .dash-topo h3 {
+      font-size: 18px;
+      color: var(--azul);
+    }
+
+    .dash-periodo {
+      background: var(--cinza-claro);
+      border: 1px solid var(--borda);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--azul);
+    }
+
+    .dash-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .dash-item {
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .dash-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--cinza-texto);
+    }
+
+    .dash-valores {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .dash-valores .de {
+      font-size: 14px;
+      color: var(--cinza-texto);
+    }
+
+    .dash-valores .seta {
+      color: var(--cinza-texto);
+    }
+
+    .dash-valores strong {
+      font-size: 26px;
+      color: var(--azul);
+    }
+
+    .dash-badge {
+      align-self: flex-start;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e3f6ec;
+      color: #17803d;
+    }
+
+    .chip {
+      position: absolute;
+      background: var(--branco);
+      color: var(--azul);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 14px;
+      box-shadow: var(--sombra);
+    }
+
+    .chip-1 { top: -16px; right: 24px; }
+    .chip-2 { bottom: -16px; left: 24px; }
+
+    .resultados + .resultados {
+      margin-top: 64px;
+    }
+
+    @media (max-width: 700px) {
+      .dash-grid { grid-template-columns: 1fr; }
+      .resultados-painel { padding: 32px 16px; }
+      .dash { padding: 20px; }
+    }
+
     .contact {
-      background: linear-gradient(135deg, var(--azul), #0d416f);
+      width: 100vw;                       /* largura da tela inteira */
+      margin-left: calc(50% - 50vw);      /* escapa do container, colando na borda esquerda */
+      background-image: url('background - final.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      aspect-ratio: 1920 / 1080;
       color: var(--branco);
-      border-radius: 32px;
-      padding: 44px;
+      padding: 7vw 60px 0 max(60px, calc((100vw - 1120px) / 2));   /* alinha o texto com o resto do site */
       display: grid;
       grid-template-columns: 1.1fr .9fr;
       gap: 28px;
       align-items: center;
-      box-shadow: var(--sombra);
     }
 
     .contact h2 {
-      font-size: clamp(27px, 3vw, 42px);
-      line-height: 1.12;
-      margin-bottom: 12px;
+      font-size: clamp(44px, 5vw, 60px);
+      line-height: 1.08;
     }
 
     .contact p {
-      color: rgba(255, 255, 255, .82);
-      font-size: 17px;
+      font-size: clamp(20px, 1.8vw, 20px);
+      line-height: 1.5;
     }
 
-    .contact-box {
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 24px;
-      padding: 24px;
+    .btn-orcamento {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 24px;
+      background: var(--vermelho);
+      color: var(--branco);
+      font-size: clamp(13px, 1vw, 16px);
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .contact-box p {
-      font-size: 15px;
-      margin-bottom: 14px;
+    .btn-orcamento:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
     }
 
-    .contact-box strong {
-      color: #fff;
+    /* =====================================================
+       ANIMAÇÕES
+       ===================================================== */
+
+    /* o elemento nasce invisível, 30px mais baixo, e sobe até o lugar */
+    @keyframes surgir {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
-    .contact-box .btn {
+    /* selinhos flutuando */
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-7px); }
+    }
+
+    /* ===== HERO: ao abrir a página, tudo entra em sequência ===== */
+    .hero h1                         { animation: surgir 0.9s ease-out 0.2s  backwards; }
+    .hero p                          { animation: surgir 0.9s ease-out 0.5s  backwards; }
+    .hero .btn-primary               { animation: surgir 0.9s ease-out 0.8s  backwards; }
+    .hero-badges .badge:nth-child(1) { animation: surgir 0.9s ease-out 1.0s  backwards; }
+    .hero-badges .badge:nth-child(2) { animation: surgir 0.9s ease-out 1.15s backwards; }
+    .hero-badges .badge:nth-child(3) { animation: surgir 0.9s ease-out 1.3s  backwards; }
+
+    .badge img {
+      transition: transform 0.3s ease;
+    }
+
+    .badge:hover img {
+      transform: scale(1.2) rotate(-6deg);
+    }
+
+    /* ===== ENTRADA AO ROLAR A PÁGINA ===== */
+    /* o ".js-anim" só existe se o JavaScript rodar, então sem JS o site aparece normal */
+    .js-anim .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition-delay: var(--atraso, 0s);
+    }
+
+    .js-anim .reveal.de-esquerda { transform: translateX(-60px); }
+    .js-anim .reveal.de-direita  { transform: translateX(60px); }
+    .js-anim .reveal.de-zoom     { transform: scale(0.92); }
+
+    /* esta regra precisa ficar DEPOIS das de cima */
+    .js-anim .reveal.visivel {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ===== SERVIÇOS: card sobe e ícone pula ao passar o mouse ===== */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 40px rgba(9, 50, 178, 0.35);
+    }
+
+    .card-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-icon {
+      transform: translateY(-6px) scale(1.08);
+    }
+
+    /* ===== MÉTODO: etapa destaca ao passar o mouse ===== */
+    .step {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: var(--sombra);
+      border-color: var(--vermelho);
+    }
+
+    .step-number {
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover .step-number {
+      transform: scale(1.15);
+    }
+
+    /* ===== RESULTADOS: zoom ao passar o mouse ===== */
+    .resultados-painel {
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .resultados-painel:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 60px rgba(9, 50, 178, 0.30);
+      z-index: 2;
+    }
+
+    .dash-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .dash-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 14px 30px rgba(9, 50, 178, 0.18);
+      border-color: #0932b2;
+    }
+
+    .chip-1 { animation: flutuar 4s ease-in-out infinite; }
+    .chip-2 { animation: flutuar 4s ease-in-out 1s infinite; }
+
+    /* ===== MENU E LOGO ===== */
+    nav ul a {
+      position: relative;
+    }
+
+    nav ul a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
       width: 100%;
-      margin-top: 10px;
+      height: 2px;
+      background: var(--vermelho);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    nav ul a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .logo {
+      transition: transform 0.3s ease;
+    }
+
+    .brand:hover .logo {
+      transform: scale(1.05);
+    }
+
+    header {
+      transition: box-shadow 0.3s ease;
+    }
+
+    header.rolou {
+      box-shadow: 0 8px 24px rgba(8, 47, 85, 0.10);
+    }
+
+    /* quem ativou "reduzir movimento" no aparelho não vê animações */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
     }
 
     footer {
@@ -566,11 +997,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#inicio" aria-label="Integra Gestão e Regulação">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">
-          <strong>INTEGRA</strong>
-          <span>GESTÃO E REGULAÇÃO</span>
-        </span>
+        <img src="Logo-Original-IntegraGestora-CorOriginal.png" alt="Integra Gestão e Regulação" class="logo">
       </a>
 
       <nav aria-label="Menu principal">
@@ -578,6 +1005,7 @@
           <li><a href="#sobre">Quem somos</a></li>
           <li><a href="#servicos">Serviços</a></li>
           <li><a href="#metodo">Método</a></li>
+          <li><a href="#resultados">Resultados</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
@@ -588,42 +1016,42 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Gestão inteligente, regulação precisa</span>
           <h1> Gestão inteligente para associações mais eficientes.</h1>
           <p>
             Apoio administrativo, operacional e regulatório para transformar processos, dados e rotinas em uma operação mais organizada, segura e preparada para crescer.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contato">Fale conosco.</a>
+
+            <div class="hero-badges">
+              <div class="badge">
+                <img src="icone-cobranca.png" alt="">
+                <span>Organização</span>
+              </div>
+              <div class="badge">
+                <img src="icone-cobranca.png" alt="">
+                <span>Processos</span>
+              </div>
+              <div class="badge">
+                <img src="icone-cobranca.png" alt="">
+                <span>Segurança</span>
+              </div>
+            </div>
           </div>
         </div>
-
-        <aside class="hero-card" aria-label="Resumo da marca Integra">
-          <div class="hero-logo">
-            <span class="big">INTEGRA</span>
-            <span class="sub">GESTÃO E REGULAÇÃO</span>
-            <span class="tag">Gestão inteligente, regulação precisa</span>
-          </div>
-          <ul class="check-list">
-            <li>Processos administrativos mais organizados.</li>
-            <li>Apoio à regulação e controle operacional.</li>
-            <li>Indicadores para tomada de decisão.</li>
-          </ul>
-        </aside>
       </div>
     </section>
 
     <section id="sobre">
       <div class="container split">
-        <div class="Fundo - Site2.png"></div>
         <div class="section-title">
           <span class="eyebrow">Quem somos</span>
           <h2>A Integra </h2>
           <p>
-           é especializada na estruturação administrativa, operacional, comercial e documental de associações de proteção patrimonial mutualista.
+            é especializada na estruturação administrativa, operacional, </br> comercial e documental de associações de proteção </br> patrimonial mutualista.
           </p>
           <p style="margin-top: 14px;">
-            Organizamos processos, indicadores, rotinas e responsabilidades para que a diretoria tenha mais controle sobre a operação e tome decisões com segurança.
+            Organizamos processos, indicadores, rotinas e responsabilidades </br> para que a diretoria tenha mais controle sobre a operação e tome </br> decisões com segurança.
           </p>
           <p style="margin-top: 14px;">
             Estruturamos. Acompanhamos. Geramos evolução operacional.
@@ -632,80 +1060,65 @@
       </div>
     </section>
 
-    
-<!-- SEÇÃO O QUE FAZEMOS -->
+    <!-- SEÇÃO O QUE FAZEMOS -->
     <section id="servicos">
-      <div class="container">
-        <div class="section-title">
-          <span class="eyebrow"> - O QUE FAZEMOS (PILARES) </span>
-          <h2>Gestão que transforma operação em resultado.</h2>
-          <p>
-            A Integra estrutura processos e organiza rotinas para associações de proteção mutualista e veicular.
-          </p>
-            
-        </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">
+            <img src="icone-gestao2.png" alt="Gestão" />
+          </div>
+          <h3>GESTÃO ADMINISTRATIVA</h3>
+          <p>Organização de processos, rotinas e responsabilidades.</p>
+        </article>
 
-        <div class="cards">
-          <article class="card">
-            <div class="card-icon">
-              <img src="icone-gestao2.png" alt="Gestão" />
-            </div>
-            <h3>GESTÃO ADMINISTRATIVA</h3>
-            <p>Organização de processos, rotinas e responsabilidades.</p>
-          </article>
+        <article class="card">
+          <div class="card-icon">
+            <img src="icone-gestão-comercial.png" alt="Gestão Comercial" />
+          </div>
+          <h3>GESTÃO COMERCIAL E CARTEIRA </h3>
+          <p>Acompanhamento das vendas, retenção e receita recorrente.</p>
+        </article>
 
-          <article class="card">
-            <div class="card-icon">
-              <img src="icone-gestão-comercial.png" alt="Gestão Comercial" />
-            </div>
-            <h3>GESTÃO COMERCIAL E CARTEIRA </h3>
-            <p>Acompanhamento das vendas, retenção e receita recorrente.</p>  
-          </article>
+        <article class="card">
+          <div class="card-icon">
+            <img src="icone-cobranca.png" alt="Cobrança" />
+          </div>
+          <h3>COBRANÇA</h3>
+          <p>Controle da inadimplência e recuperação da carteira.</p>
+        </article>
 
-          <article class="card">
-            <div class="card-icon">
-               <img src="icone-cobranca.png" alt="Cobrança" />
-            </div>
-            <h3>COBRANÇA</h3>
-            <p>Controle da inadimplência e recuperação da carteira.</p>
-          </article>
+        <article class="card">
+          <div class="card-icon">
+            <img src="icone-eventos.png" alt="Eventos" />
+          </div>
+          <h3>EVENTOS E SINISTROS</h3>
+          <p>Padronização dos fluxos e controle operacional.</p>
+        </article>
 
-          <article class="card">
-            <div class="card-icon">
-              <img src="icone-eventos.png" alt="Eventos" />
-            </div>
-            <h3>EVENTOS E SINISTROS</h3>
-            <p>Padronização dos fluxos e controle operacional.</p>
-          </article>
+        <article class="card">
+          <div class="card-icon">
+            <img src="icone-indicadores.png" alt="Indicadores" />
+          </div>
+          <h3>INDICADORES DE GESTÃO</h3>
+          <p>Monitoramento de resultados para apoiar decisões.</p>
+        </article>
 
-          <article class="card">
-            <div class="card-icon">
-              <img src="icone-indicadores.png" alt="Indicadores" />
-            </div>
-            <h3>INDICADORES DE GESTÃO</h3>
-            <p>Monitoramento de resultados para apoiar decisões.</p>
-          </article>
-
-          <article class="card">
-            <div class="card-icon">
-
-              <img src="icone-governanca.png" alt="Governança Documental" />
-            </div>
-            <h3>GOVERNANÇA  DOCUMENTAL</h3>
-            <p>Estruturação de documentos, Controles e evidências.</p>
-          </article>
-
-        </div>
+        <article class="card">
+          <div class="card-icon">
+            <img src="icone-governanca.png" alt="Governança Documental" />
+          </div>
+          <h3>GOVERNANÇA  DOCUMENTAL</h3>
+          <p>Estruturação de documentos, Controles e evidências.</p>
+        </article>
       </div>
     </section>
 
     <section id="metodo">
       <div class="container split">
         <div class="section-title">
-          <span class="eyebrow">Nosso método</span>
-          <h2>Simples de acompanhar. Forte na execução.</h2>
+          <span class="eyebrow"> Nosso método</span>
           <p>
-            A Integra trabalha com diagnóstico, organização, implantação e acompanhamento. O objetivo é criar uma gestão prática, com metas claras e rotina de execução.
+            A Integra trabalha com diagnóstico, organização, implantação e acompanhamento. O objetivo é criar uma gestão prática, com metas claras e rotina de execução. O objetivo é criar uma gestão prática, com metas claras e rotina de execução.
           </p>
         </div>
 
@@ -745,23 +1158,128 @@
       </div>
     </section>
 
+    <!-- SEÇÃO RESULTADOS -->
+    <section id="resultados">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="eyebrow"> → Resultados Práticos </span>
+        </div>
+
+        <!-- PAINEL 1 -->
+        <div class="resultados">
+          <div class="resultados-painel">
+
+            <div class="dash">
+              <div class="dash-topo">
+                <h3>Resultados da operação</h3>
+                <span class="dash-periodo">FEV – JUN/26</span>
+              </div>
+
+              <div class="dash-grid">
+                <div class="dash-item">
+                  <span class="dash-label">Base ativa</span>
+                  <div class="dash-valores">
+                    <span class="de">687</span>
+                    <span class="seta">→</span>
+                    <strong>919</strong>
+                  </div>
+                  <span class="dash-badge">+33,8%</span>
+                </div>
+
+                <div class="dash-item">
+                  <span class="dash-label">Sinistralidade</span>
+                  <div class="dash-valores">
+                    <span class="de">36,09%</span>
+                    <span class="seta">→</span>
+                    <strong>14,51%</strong>
+                  </div>
+                  <span class="dash-badge">-21,6 p.p.</span>
+                </div>
+
+                <div class="dash-item">
+                  <span class="dash-label">Inadimplência</span>
+                  <div class="dash-valores">
+                    <span class="de">18,5%</span>
+                    <span class="seta">→</span>
+                    <strong>15,05%</strong>
+                  </div>
+                  <span class="dash-badge">-3,45 p.p.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chip chip-1">Base ativa +33,8%</div>
+            <div class="chip chip-2">Sinistralidade -21,6 p.p.</div>
+
+          </div>
+        </div>
+
+        <!-- PAINEL 2 -->
+        <div class="resultados">
+          <div class="resultados-painel">
+
+            <div class="dash">
+              <div class="dash-topo">
+                <h3>Resultados da operação</h3>
+                <span class="dash-periodo">ABR – JUN/26</span>
+              </div>
+
+              <div class="dash-grid">
+                <div class="dash-item">
+                  <span class="dash-label">Base ativa</span>
+                  <div class="dash-valores">
+                    <span class="de">2.461</span>
+                    <span class="seta">→</span>
+                    <strong>2.643</strong>
+                  </div>
+                  <span class="dash-badge">+7,4%</span>
+                </div>
+
+                <div class="dash-item">
+                  <span class="dash-label">Sinistralidade</span>
+                  <div class="dash-valores">
+                    <span class="de">36,24%</span>
+                    <span class="seta">→</span>
+                    <strong>30,43%</strong>
+                  </div>
+                  <span class="dash-badge">-5,8 p.p.</span>
+                </div>
+
+                <div class="dash-item">
+                  <span class="dash-label">Inadimplência</span>
+                  <div class="dash-valores">
+                    <span class="de">54,84%</span>
+                    <span class="seta">→</span>
+                    <strong>42,90%</strong>
+                  </div>
+                  <span class="dash-badge">-11,9 p.p.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="chip chip-1">Base ativa +7,4%</div>
+            <div class="chip chip-2">Sinistralidade -5,8 p.p.</div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <section id="contato">
       <div class="container">
         <div class="contact">
           <div>
             <span class="eyebrow" style="color:#fff;">Contato</span>
-            <h2>Quer organizar melhor a gestão da sua associação?</h2>
+            <h2>Transforme </br> o crescimento </br> em controle</h2>
             <p>
-              Fale com a Integra e entenda como podemos apoiar sua operação com mais controle, clareza e profissionalismo.
+              Estruture sua operação para crescer </br> com controle, margem e escala. </br> Fale conosco.
             </p>
-          </div>
-
-          <div class="contact-box">
-            <p><strong>E-mail:</strong><br>contato@integragestora.com.br</p>
-            <p><strong>Empresa:</strong><br>Integra Gestão e Regulação</p>
-            <p><strong>Atuação:</strong><br>Gestão, regulação, cobrança, atendimento e suporte operacional.</p>
-            <a class="btn btn-primary" href="mailto:contato@integragestora.com.br">Enviar e-mail</a>
-            <!-- Para usar WhatsApp, troque o link acima por: https://wa.me/5581999999999 -->
+            <a class="btn-orcamento" href="tel:+5581999763422">
+              Solicite um orçamento
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </div>
@@ -777,6 +1295,93 @@
 
   <script>
     document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // quem prefere menos movimento não recebe nenhuma animação
+    const semMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!semMovimento) {
+      document.documentElement.classList.add('js-anim');
+
+      /* ---------- 1. ENTRADA AO ROLAR ---------- */
+      // sel   = quais elementos animar
+      // ciclo = a cada quantos elementos o atraso volta a zero (cria o efeito cascata)
+      // tipo  = de onde o elemento vem
+      const grupos = [
+        { sel: '#sobre .section-title > *',      ciclo: 99, tipo: 'de-esquerda' },
+        { sel: '#servicos .card',                ciclo: 3,  tipo: '' },
+        { sel: '#metodo .section-title > *',     ciclo: 99, tipo: 'de-direita' },
+        { sel: '#metodo .step',                  ciclo: 4,  tipo: 'de-direita' },
+        { sel: '#resultados .section-title > *', ciclo: 99, tipo: '' },
+        { sel: '#resultados .resultados',        ciclo: 1,  tipo: 'de-zoom' },
+        { sel: '#contato .contact > div > *',    ciclo: 99, tipo: 'de-esquerda' }
+      ];
+
+      const observador = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (!entrada.isIntersecting) return;
+          const el = entrada.target;
+          el.classList.add('visivel');
+          observador.unobserve(el);
+
+          // depois que a entrada termina, tira as classes para os efeitos de hover voltarem a funcionar
+          const atraso = parseFloat(el.style.getPropertyValue('--atraso')) || 0;
+          setTimeout(() => {
+            el.classList.remove('reveal', 'visivel', 'de-esquerda', 'de-direita', 'de-zoom');
+            el.style.removeProperty('--atraso');
+          }, (atraso + 0.9) * 1000);
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+      grupos.forEach((grupo) => {
+        document.querySelectorAll(grupo.sel).forEach((el, i) => {
+          el.classList.add('reveal');
+          if (grupo.tipo) el.classList.add(grupo.tipo);
+          el.style.setProperty('--atraso', ((i % grupo.ciclo) * 0.12) + 's');
+          observador.observe(el);
+        });
+      });
+
+      /* ---------- 2. NÚMEROS CONTANDO ---------- */
+      function contar(el) {
+        const original = el.textContent.trim();
+        const m = original.match(/^([^\d]*)([\d.,]+)([^\d]*)$/);
+        if (!m) return;
+
+        const prefixo = m[1], numTxt = m[2], sufixo = m[3];
+        const decimais = numTxt.includes(',') ? numTxt.split(',')[1].length : 0;
+        const alvo = parseFloat(numTxt.replace(/\./g, '').replace(',', '.'));
+        const duracao = 1500;
+        const inicio = performance.now();
+
+        function passo(agora) {
+          const p = Math.min((agora - inicio) / duracao, 1);
+          const valor = alvo * (1 - Math.pow(1 - p, 3));   // começa rápido e desacelera
+          el.textContent = prefixo + valor.toLocaleString('pt-BR', {
+            minimumFractionDigits: decimais,
+            maximumFractionDigits: decimais
+          }) + sufixo;
+          if (p < 1) requestAnimationFrame(passo);
+          else el.textContent = original;
+        }
+        requestAnimationFrame(passo);
+      }
+
+      const observadorNumeros = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (!entrada.isIntersecting) return;
+          contar(entrada.target);
+          observadorNumeros.unobserve(entrada.target);
+        });
+      }, { threshold: 0.6 });
+
+      document.querySelectorAll('.dash-valores strong').forEach((el) => observadorNumeros.observe(el));
+
+      /* ---------- 3. SOMBRA NO MENU AO ROLAR ---------- */
+      const cabecalho = document.querySelector('header');
+      window.addEventListener('scroll', () => {
+        cabecalho.classList.toggle('rolou', window.scrollY > 10);
+      }, { passive: true });
+    }
   </script>
 </body>
 </html>
